@@ -811,6 +811,11 @@
         border-bottom-color: #000 !important;
         background: rgba(255, 255, 255, 1) !important;
       }
+      
+      /* Add padding to main content to avoid overlap with fixed timeline */
+      .main-content {
+        padding-bottom: 80px !important;
+      }
     }
 
     @media screen and (max-width: 480px) {
@@ -1116,16 +1121,22 @@
       // Gewählte Sektion anzeigen
       document.getElementById(sectionName).style.display = 'block';
       
-      // Aktiven Link markieren
+      // Aktiven Link markieren - Mobile und Desktop kompatibel
       const links = document.querySelectorAll('.timeline a');
       links.forEach(link => {
+        // Desktop Styling
         link.style.borderColor = '#ccc';
         link.style.color = '#333';
+        // Mobile Styling
+        link.style.borderBottomColor = '#ccc';
+        link.style.background = 'rgba(255, 255, 255, 0.8)';
       });
       
-      // Aktuellen Link hervorheben
+      // Aktuellen Link hervorheben - Mobile und Desktop kompatibel
       event.target.style.borderColor = '#000';
       event.target.style.color = '#000';
+      event.target.style.borderBottomColor = '#000';
+      event.target.style.background = 'rgba(255, 255, 255, 1)';
       return false;
     }
   </script>
