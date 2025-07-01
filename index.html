@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CURRICULUM</title>
+  <style>
+    @keyframes zoomFadeIn {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+        filter: blur(20px);
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+
+    @keyframes pulseZoom {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(4);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    #main-content.animate-in {
+      animation: zoomFadeIn 1.2s ease-out forwards;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      width: 100%;
+      max-width: 794px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+
+    html {
+      overflow-y: scroll;
+    }
+
+    body {
+      display: block;
+      background: #ffffff;
+    }
+
+    .page-wrapper {
+      width: 100%;
+      max-width: 794px;
+      margin: 0 auto;
+      overflow-anchor: none;
+      min-height: 1000px;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+
+    .title-tag {
+      font-size: 1.8rem;
+      font-weight: 200;
+      text-transform: uppercase;
+      color: #333;
+      margin: 1rem 0;
+      border-left: 3px solid #ccc;
+      padding-left: 0.6rem;
+      transition: all 0.2s ease;
+      font-size: 2rem;
+      text-decoration: none;
+    }
+
+    #intro-screen .title-tag {
+      animation: pulseZoom 120s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    .timeline {
+      z-index: 999;
+      position: fixed;
+      left: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .timeline a {
+      font-size: 1rem;
+      color: #333;
+      text-decoration: none;
+      padding: 0.3rem 0.6rem;
+      border-left: 3px solid #ccc;
+      transition: all 0.2s ease;
+    }
+
+    .timeline a:hover {
+      border-color: #000;
+      color: #000;
+    }
+
+    .main-content {
+      max-width: 794px;
+      width: 794px;
+      margin: 0 auto;
+      padding: 2rem;
+      padding-bottom: 50px;
+      box-sizing: border-box;
+    }
+
+    .content-section {
+      display: block;
+      position: static;
+      overflow: visible;
+    }
+
+    #experience {
+      position: static;
+      overflow: visible;
+      height: auto;
+    }
+
+    .skills-grid {
+      display: block;
+      margin-top: 1rem;
+    }
+
+    .skill-box {
+      padding: 1.2rem;
+      border-radius: 0;
+      margin-bottom: 0;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-top: none;
+    }
+
+    .skill-box:first-child {
+      border-top-left-radius: 2em;
+      border-top-right-radius: 2em;
+      border-top: 1px solid #e9ecef;
+    }
+
+    .skill-box:last-child {
+      border-bottom-left-radius: 2em;
+      border-bottom-right-radius: 2em;
+      margin-bottom: 2rem;
+    }
+
+    .skill-heading {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    .skill-heading-bar {
+      background-color: #333;
+      color: #fff;
+      padding: 0.6rem 1rem;
+      margin: -1.2rem -1.2rem 1rem -1.2rem;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      font-size: 1rem;
+      font-weight: 600;
+      border-bottom: 1px solid #555;
+    }
+
+    .skill-box:first-child .skill-heading-bar {
+      border-top-left-radius: 2em;
+      border-top-right-radius: 2em;
+    }
+
+    .job-heading-bar {
+      background-color: #333;
+      color: #fff;
+      padding: 0.6rem 1rem;
+      margin: -1.2rem -1.2rem 1rem -1.2rem;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      font-size: 1rem;
+      font-weight: 600;
+      border-bottom: 1px solid #555;
+    }
+
+    .job-entry:first-child .job-heading-bar {
+      border-top-left-radius: 2em;
+      border-top-right-radius: 2em;
+    }
+
+    .skill-box p {
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .skill-box p:first-of-type {
+      margin-top: 0;
+    }
+
+    .skill-box p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .skill-box em {
+      color: #666;
+      font-size: 0.85rem;
+    }
+
+    .skill-list {
+      margin: 0;
+      padding: 0 0 0 1.2rem;
+      list-style: disc;
+    }
+
+    .skill-list li {
+      margin: 0.4rem 0;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      padding-left: 0;
+    }
+
+    .skill-pill {
+      display: inline-block;
+      background: #f0f8ff;
+      color: #333;
+      padding: 0.3rem 0.8rem;
+      margin: 0.2rem 0.3rem 0.2rem 0;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border: 1px solid #e8f4f8;
+    }
+
+    .skill-pill.tech-tools {
+      background: #f0fdf4;
+      border: 1px solid #dcfce7;
+      box-shadow: 0 2px 4px rgba(34, 197, 94, 0.1);
+    }
+
+    .skill-pill.languages {
+      background: #fef7ff;
+      border: 1px solid #f3e8ff;
+    }
+
+    .skill-pill.general {
+      background: #fffbeb;
+      border: 1px solid #fef3c7;
+    }
+
+    .language-pill {
+      display: inline-flex;
+      align-items: center;
+      margin: 0.3rem 0;
+      font-weight: 600;
+      font-size: 0.85rem;
+      border-radius: 2em;
+      padding: 0.4rem 0.8rem;
+      position: relative;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      background: #ffffff;
+      color: #333;
+      border: 1px solid #dee2e6;
+    }
+
+    .language-pill em {
+      font-style: italic;
+      font-weight: 400;
+      margin-left: 0.3rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 2em;
+      background: #ffffff;
+      position: relative;
+      z-index: 2;
+      margin-right: -0.4rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      border: 1px solid #dee2e6;
+      color: #666;
+    }
+
+    .language-pill.german {
+      background: #ffffff;
+      color: #333;
+      border: 1px solid #dee2e6;
+    }
+
+    .language-pill.english {
+      background: #ffffff;
+      color: #333;
+      border: 1px solid #dee2e6;
+    }
+
+    .language-pill.spanish {
+      background: #ffffff;
+      color: #333;
+      border: 1px solid #dee2e6;
+    }
+
+    .language-pill.html {
+      background: #ffffff;
+      color: #333;
+      border: 1px solid #dee2e6;
+    }
+
+    .language-pill.markdown {
+      background: #ffffff;
+      color: #333;
+      border: 1px solid #dee2e6;
+    }
+
+    .language-pill.os-systems {
+      background: #f8f9fa;
+      color: #333;
+      border: 1px solid #dee2e6;
+    }
+
+    .language-pill.software {
+      background: #f8f9fa;
+      color: #333;
+      border: 1px solid #dee2e6;
+    }
+
+    .language-pill.ai-tools {
+      background: #f8f9fa;
+      color: #333;
+      border: 1px solid #dee2e6;
+    }
+
+    .tech-category-container {
+      display: flex;
+      flex-direction: column;
+      margin: 0.8rem 0;
+      border-radius: 2em;
+      padding: 0.8rem 1.2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background: #ffffff;
+      border: 1px solid #dee2e6;
+    }
+
+    .tech-category-container.os-systems {
+      background: #ffffff;
+      border: 1px solid #dee2e6;
+    }
+
+    .tech-category-container.software {
+      background: #ffffff;
+      border: 1px solid #dee2e6;
+    }
+
+    .tech-category-container.ai-tools {
+      background: #ffffff;
+      border: 1px solid #dee2e6;
+    }
+
+    .tech-category-container.soft-skills {
+      background: #ffffff;
+      border: 1px solid #dee2e6;
+    }
+
+    .tech-category-title {
+      background-color: #555;
+      color: #f2f2f2;
+      padding: 0.6rem 1rem;
+      margin: -0.8rem -1.2rem 0.8rem -1.2rem;
+      border-top-left-radius: 2em;
+      border-top-right-radius: 2em;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .tech-category-title.os-systems {
+      background-color: #555;
+      color: #f2f2f2;
+    }
+
+    .tech-category-title.software {
+      background-color: #555;
+      color: #f2f2f2;
+    }
+
+    .tech-category-title.ai-tools {
+      background-color: #555;
+      color: #f2f2f2;
+    }
+
+    .tech-category-title.soft-skills {
+      background-color: #555;
+      color: #f2f2f2;
+    }
+
+    .tech-tools-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .tech-tool-pill {
+      background: #ffffff;
+      border: 1px solid #dee2e6;
+      border-radius: 1.2em;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.8rem;
+      font-weight: 400;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      color: #333;
+    }
+
+    .education-pill {
+      display: block;
+      background: #ffffff;
+      border: 1px solid #dee2e6;
+      border-radius: 2em;
+      padding: 0.8em 1.2em;
+      margin: 0.8rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      line-height: 1.4;
+    }
+
+    .education-pill strong {
+      font-weight: 600;
+      color: #333;
+    }
+
+    .education-pill em {
+      font-style: italic;
+      color: #666;
+      font-size: 0.9em;
+    }
+
+    .education-pill a {
+      font-size: 0.8em;
+      color: #007acc;
+      text-decoration: none;
+      margin-left: 0.5em;
+    }
+
+    .job-content-pill {
+      display: block;
+      background: #ffffff;
+      border: 1px solid #dee2e6;
+      border-radius: 2em;
+      padding: 0.8em 1.2em;
+      margin: 0.8rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      line-height: 1.4;
+    }
+
+    .job-content-pill p {
+      margin: 0 0 0.5rem 0;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .job-content-pill p:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-content-pill ul {
+      margin: 0.5rem 0 0 0;
+      padding-left: 1.2rem;
+      list-style: disc;
+    }
+
+    .job-content-pill li {
+      margin: 0.4rem 0;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: #333;
+    }
+
+    .skill-category-wrapper {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 0.5rem 0;
+      gap: 0.2rem;
+      width: 100%;
+    }
+
+    .skill-category-pill {
+      background: #e3f2fd;
+      color: #1565c0;
+      padding: 0.4rem 0.8rem;
+      border-radius: 2em;
+      font-weight: 600;
+      font-size: 0.85rem;
+      border: 1px solid #bbdefb;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .skill-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 0.5rem 0;
+      gap: 0.3rem;
+    }
+
+    .skill-pill.category {
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 2em;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .skill-pill.category.os-systems {
+      background: #e8f5e8;
+      color: #2e7d32;
+      border: 1px solid #c8e6c9;
+    }
+
+    .skill-pill.category.software {
+      background: #e3f2fd;
+      color: #1565c0;
+      border: 1px solid #bbdefb;
+    }
+
+    .skill-pill.category.ai-tools {
+      background: #fce4ec;
+      color: #c2185b;
+      border: 1px solid #f8bbd9;
+    }
+
+    .skill-pill.value {
+      background: #f0fdf4;
+      border: 1px solid #dcfce7;
+      box-shadow: 0 2px 4px rgba(34, 197, 94, 0.1);
+      margin-left: 0.2rem;
+    }
+
+    .tech-skill-pill {
+      display: inline-flex;
+      align-items: center;
+      margin: 0.3rem 0 0.3rem 0;
+      font-weight: 600;
+      font-size: 0.85rem;
+      border-radius: 2em 0.5em 0.5em 2em;
+      padding: 0.4rem 0.8rem;
+      position: relative;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border: 1px solid transparent;
+    }
+
+    .tech-skill-pill em {
+      font-style: normal;
+      font-weight: 400;
+      margin-left: 0.3rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 0.5em 2em 2em 0.5em;
+      background: rgba(255,255,255,0.3);
+      position: relative;
+      z-index: 2;
+      margin-right: -0.4rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .tech-skill-pill.os-systems {
+      background: #e8f5e8;
+      color: #2e7d32;
+      border-color: #c8e6c9;
+    }
+
+    .tech-skill-pill.software {
+      background: #e3f2fd;
+      color: #1565c0;
+      border-color: #bbdefb;
+    }
+
+    .tech-skill-pill.ai-tools {
+      background: #fce4ec;
+      color: #c2185b;
+      border-color: #f8bbd9;
+    }
+
+    .tech-tool-only {
+      display: inline-flex;
+      align-items: center;
+      margin: 0.3rem 0 0.3rem -0.1rem;
+      font-weight: 400;
+      font-size: 0.85rem;
+      border-radius: 0.5em 2em 2em 0.5em;
+      padding: 0.4rem 0.8rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border: 1px solid transparent;
+      position: relative;
+    }
+
+    .tech-tool-only.os-systems {
+      background: #e8f5e8;
+      color: #2e7d32;
+      border-color: #c8e6c9;
+    }
+
+    .tech-tool-only.software {
+      background: #e3f2fd;
+      color: #1565c0;
+      border-color: #bbdefb;
+    }
+
+    .tech-tool-only.ai-tools {
+      background: #fce4ec;
+      color: #c2185b;
+      border-color: #f8bbd9;
+    }
+
+    .job-entry {
+      padding: 1.2rem;
+      border-radius: 0;
+      margin-bottom: 0;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-top: none;
+    }
+
+    .job-entry:first-child {
+      border-top-left-radius: 2em;
+      border-top-right-radius: 2em;
+      border-top: 1px solid #e9ecef;
+    }
+
+    .job-entry:last-child {
+      border-bottom-left-radius: 2em;
+      border-bottom-right-radius: 2em;
+      margin-bottom: 2rem;
+    }
+
+    .job-entry:nth-child(even) {
+      background: #f8f9fa;
+    }
+
+    .job-entry h3 {
+      margin-bottom: 0.3rem;
+      font-size: 1.2rem;
+    }
+
+    .job-entry p, li {
+      font-size: 0.95rem;
+    }
+
+    li {
+      margin-left: 1.2rem;
+    }
+
+    header {
+      position: static;
+      z-index: 999;
+      width: 794px;
+      max-width: 794px;
+      background-color: #fff;
+      min-height: 180px;
+    }
+
+    .top-header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 3rem;
+      max-width: 794px;
+      width: 794px;
+      padding: 2rem;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .profile img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .profile-text h1 {
+      font-size: 1.6rem;
+      margin: 0;
+    }
+
+    .profile-text p {
+      font-size: 0.9rem;
+      margin: 0.2rem 0;
+    }
+
+    .contact-placeholder {
+      font-size: 0.9rem;
+      color: #666;
+      text-align: right;
+    }
+
+    .header-links {
+      text-align: center;
+      margin: 2rem auto;
+      max-width: 794px;
+      width: 794px;
+    }
+
+    .header-links a {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-size: 0.95rem;
+      color: #1a1a1a;
+      background: #f1f1f1;
+      padding: 0.4rem 0.8rem;
+      border-radius: 12px;
+    }
+
+    .header-links img {
+      width: 20px;
+      height: 20px;
+      margin-left: 6px;
+    }
+    #timeline, #title-fixed {
+      display: none;
+    }
+
+    /* Mobile responsiveness */
+    @media screen and (max-width: 768px) {
+      html, body {
+        padding: 0 0.5rem;
+      }
+      
+      .page-wrapper {
+        padding: 0 0.5rem;
+      }
+      
+      .title-tag {
+        font-size: 1.5rem;
+      }
+      
+      #title-fixed {
+        left: 20px !important;
+        top: 150px !important;
+        font-size: 1.2rem !important;
+      }
+      
+      #intro-screen .title-tag {
+        font-size: 2.5rem !important;
+      }
+      
+      .skill-box, .job-entry {
+        margin: 0.5rem 0;
+      }
+      
+      .tech-skill-pill, .language-pill, .education-pill {
+        margin: 0.2rem;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+      }
+      
+      .tech-category-title {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+      }
+      
+      .job-heading-bar h3, .skill-heading-bar h3 {
+        font-size: 1rem;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      html, body {
+        padding: 0 0.25rem;
+      }
+      
+      .page-wrapper {
+        padding: 0 0.25rem;
+      }
+      
+      .title-tag {
+        font-size: 1.2rem;
+      }
+      
+      #title-fixed {
+        left: 10px !important;
+        top: 100px !important;
+        font-size: 1rem !important;
+      }
+      
+      #intro-screen .title-tag {
+        font-size: 2rem !important;
+      }
+      
+      .tech-skill-pill, .language-pill, .education-pill {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+      }
+      
+      .tech-category-title {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="title-tag" id="title-fixed" style="position: fixed; left: 40px; top: 200px; z-index: 99;">CURRICULUM</div>
+  <div id="intro-screen" style="display: flex; align-items: center; justify-content: center; height: 100vh; background: white; cursor: pointer;">
+    <div class="title-tag" style="font-size: 3rem;">CURRICULUM</div>
+  </div>
+
+  <div id="main-content" style="display: none;">
+    <style>
+      html {
+        scroll-behavior: auto !important;
+      }
+    </style>
+  <header>
+    <div class="top-header">
+      <div class="profile">
+        <img src="https://i.postimg.cc/q72mSzFQ/temp-Image-Kmy-WXM.avif" alt="Profile Picture">
+        <div class="profile-text">
+          <h1>Johanna Sofia Müllenholz <span style="font-size: 0.8rem; color: #777;">(she/her)</span></h1>
+          <p>5+ yrs in top AI models · Early Codex agent
+          <p>LangChain configs · Prompt design</p>
+          <p>Customer-centric · Process & analytics strength</p>
+          <p>GDPR compliant · Legal literacy</p>
+        </div>
+      </div>
+      <div class="contact-placeholder">
+        <p>Königswinterer Straße 631<br>53227 Bonn<br><a href="mailto:Johanna.Muellenholz@icloud.com" style="color: #666; text-decoration: none;">Johanna.Muellenholz@icloud.com</a><br>Tel.: 0157 5438 4775</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="header-links">
+    <a href="https://github.com/Olivetr33/No-More-Risk-" target="_blank">
+      GitHub <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
+    </a>
+    <a href="https://www.linkedin.com/in/johanna-sofia-m%C3%BCllenholz-11a375229/" target="_blank">
+      LinkedIn <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+    </a>
+    </div>
+
+  <main class="main-content">
+    <section id="experience" class="content-section">
+      <div class="job-entry">
+        <div class="job-heading-bar">Customer Success Manager – Trusted Shops</div>
+        <div class="job-content-pill">
+          <p>July 2024 – Present · Cologne · Full-Time · Hybrid</p>
+          <ul>
+            <li>Customer support in the field of data protection for high-touch B2B clients</li>
+            <li>Development and implementation of individual data protection strategies</li>
+            <li>Workshops and training on data protection regulations</li>
+            <li>Feedback management and analysis to improve service quality</li>
+            <li>Collaboration with sales, product development, and legal teams</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job-entry">
+        <div class="job-heading-bar">Customer Success Manager – LOFINO GmbH</div>
+        <div class="job-content-pill">
+          <p>June 2023 – June 2024 · Germany · Part-Time · Hybrid</p>
+          <ul>
+            <li>Proactive client support regarding employee benefits and tax-opimized wage models</li>
+            <li>Strategy development and implementation for benefit optimization</li>
+            <li>Conducting workshops and training sessions</li>
+            <li>Feedback collection and analysis</li>
+            <li>Close cooperation with sales, product, and legal teams</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job-entry">
+        <div class="job-heading-bar">Project Manager – Staufenbiel Institut GmbH</div>
+        <div class="job-content-pill">
+          <p>Sept. 2021 – May 2023 · Cologne/Bonn · Part-Time · Hybrid</p>
+          <ul>
+            <li>Project planning and coordination to optimize business processes</li>
+            <li>Resource management and stakeholder communication</li>
+            <li>Results analysis and goal achievement</li>
+            <li>Customer support and feedback management</li>
+            <li>Ensuring high service quality and continuous improvement</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job-entry">
+        <div class="job-heading-bar">B2B Acquisition & Consulting – Self-Employed</div>
+        <div class="job-content-pill">
+          <p>June 2017 – July 2018 · Germany · Hybrid</p>
+          <ul>
+            <li>Acquisition and consulting in communication, multimedia, and energy sectors</li>
+            <li>Market analysis and strategic development</li>
+            <li>Contract negotiations and project leadership</li>
+            <li>Team leadership and performance monitoring</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="content-section" style="display: none;">
+        <div class="job-entry">
+        <div class="job-heading-bar">3D Game Development (Current)</div>
+        <div class="job-content-pill">
+          <p>Currently developing an original 3D open-world RPG using Unity, focusing on modular systems, dynamic environments, and immersive gameplay mechanics.</p>
+          <p><strong>Technologies:</strong> Unity, Blender, Visual Studio Code, Agentic Chain with Claude Sonnet 4 for support in Coding beneath GPT 4o/4.1, GarageBand for Audio Score</p>
+        </div>
+      </div>
+      <div class="job-entry">
+        <div class="job-heading-bar">No More Risk – Risk Aggregation & Analysis Tool</div>
+        <div class="job-content-pill">
+          <p>An interactive risk evaluation tool for structured import and interpretation of Excel-based risk data. Designed for real-world use cases in compliance, policy and safety. Core features: dynamic aggregation of risk scores, workflow-based evaluation, comment logic and risk class indicators.</p>
+          <p><strong>GitHub: </strong><a href="https://github.com/Olivetr33/No-More-Risk-" target="_blank" style="color: #007acc; text-decoration: none;">github.com/Olivetr33/No-More-Risk-</a></p>
+        </div>
+      <div class="job-entry">
+        <div class="job-heading-bar">Local LLM Server with Docker – OLAMA Environment</div>
+        <div class="job-content-pill">
+          <p>A local language model runtime using OLAMA and Docker, designed for controlled fine-tuning and task-specific role modeling. Includes modular setup, prompt conditioning, and isolated local inference. Built for secure offline experimentation with lightweight deployment.</p>
+          <p><strong>Technologies:</strong> Docker, llama.cpp, custom role architecture</p>
+        </div>
+      </div>
+      <div class="job-entry">
+        <div class="job-heading-bar">LangChain Agent Workflow Playground</div>
+        <div class="job-content-pill">
+          <p>A modular testing setup for building and evaluating agentic workflows with LangChain. Focused on dynamic chaining, tool routing, and prompt experimentation for structured task decomposition. Includes early role-agent orchestration and logic sequencing.</p>
+          <p><strong>Technologies:</strong> LangChain, OpenAI, ToolRouter, MemoryChains</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills-education" class="content-section" style="display: none;">
+      <div class="skills-grid">
+        <div class="skill-box">
+          <div class="skill-heading-bar">Education & Certifications</div>
+          <div style="padding: 0; list-style: none;">
+            <div class="education-pill">
+              <strong>LL.B. Bachelor of Laws – FernUniversität Hagen</strong><a href="https://www.linkedin.com/school/fernunihagen/posts/?feedView=all" target="_blank">Link</a><br><em>Oct 2020 – Oct 2026</em>
+            </div>
+            <div class="education-pill">
+              <strong>Data Privacy Officer – TÜV SÜD</strong><a href="https://www.linkedin.com/company/57146/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3ByKMgZrwmT2yJ2YNbvmYGJg%3D%3D" target="_blank">Zertifikats-ID: Z-001054586</a><br><em>Oct 2020 – Oct 2026</em>
+            </div>
+            <div class="education-pill">
+              <strong>Effective communication through emotional intelligence – LinkedIn Learning</strong><a href="https://www.linkedin.com/learning/certificates/8e4301acb293f44505d3cae9fe2be4429e228553d6a0661bf9324980391bbd9c?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3ByKMgZrwmT2yJ2YNbvmYGJg%3D%3D" target="_blank">Certificate</a><br><em>Oct 2020 – Oct 2026</em>
+            </div>
+            <div class="education-pill">
+              <strong>Improving team performance: positive team leadership – LinkedIn Learning</strong><a href="https://www.linkedin.com/learning/certificates/ee26d5ff97a3dd5d9061b2760be6dcd0f300972b6c51928c2b997cc9aa900e96?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3ByKMgZrwmT2yJ2YNbvmYGJg%3D%3D" target="_blank">Certificate</a><br><em>Oct 2020 – Oct 2026</em>
+            </div>
+            <div class="education-pill">
+              <strong>Influence Skills for Leaders and Managers – LinkedIn Learning</strong><a href="https://www.linkedin.com/learning/certificates/fbaa4a5ceb70ee28226d0d94b7cc9f52f83aa58b30e6e9cc73372c72c1016e2e?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3ByKMgZrwmT2yJ2YNbvmYGJg%3D%3D" target="_blank">Certificate</a><br><em>Oct 2020 – Oct 2026</em>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-box">
+          <div class="skill-heading-bar">Skills</div>
+          <div style="padding: 0;">
+            <div class="tech-category-container soft-skills">
+              <div class="tech-category-title soft-skills">Soft Skills</div>
+              <div class="tech-tools-wrapper">
+                <div class="tech-tool-pill">Empathetic, clear, and needs-driven communicator</div>
+                <div class="tech-tool-pill">Data protection & law literacy</div>
+                <div class="tech-tool-pill">Strategic analysis & feedback management</div>
+                <div class="tech-tool-pill">Highly AI-driven thinking & technical architecture literacy</div>
+              </div>
+            </div>
+            
+            <div class="tech-category-container os-systems">
+              <div class="tech-category-title os-systems">OS Systems</div>
+              <div class="tech-tools-wrapper">
+                <div class="tech-tool-pill">WINDOWS</div>
+                <div class="tech-tool-pill">MAC OS</div>
+              </div>
+            </div>
+            
+            <div class="tech-category-container software">
+              <div class="tech-category-title software">Software</div>
+              <div class="tech-tools-wrapper">
+                <div class="tech-tool-pill">HUBSPOT</div>
+                <div class="tech-tool-pill">SALESFORCE</div>
+                <div class="tech-tool-pill">ASANA</div>
+                <div class="tech-tool-pill">VISUAL STUDIO CODE</div>
+                <div class="tech-tool-pill">MS OFFICE PAKET</div>
+                <div class="tech-tool-pill">LANGCHAIN</div>
+              </div>
+            </div>
+            
+            <div class="tech-category-container ai-tools">
+              <div class="tech-category-title ai-tools">AI Tools</div>
+              <div class="tech-tools-wrapper">
+                <div class="tech-tool-pill">OPEN AI CODEX</div>
+                <div class="tech-tool-pill">CHAT GPT</div>
+                <div class="tech-tool-pill">CLAUDE SONNET 4</div>
+                <div class="tech-tool-pill">SORA</div>
+                <div class="tech-tool-pill">GEMINI</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-box">
+          <div class="skill-heading-bar">Languages</div>
+          <div class="tech-tools-wrapper" style="padding: 0;">
+            <div class="language-pill german">German<em>Native</em></div>
+            <div class="language-pill english">English<em>Fluent</em></div>
+            <div class="language-pill spanish">Spanish<em>Basics</em></div>
+            <div class="language-pill html">HTML<em>Basics</em></div>
+            <div class="language-pill markdown">Markdown<em>Basics</em></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>  </div>
+
+  <!-- Timeline Navigation - completely outside main content flow -->
+  <nav id="timeline" class="timeline">
+    <a href="javascript:void(0)" onclick="showSection('experience', event)">EXPERIENCE</a>
+    <a href="javascript:void(0)" onclick="showSection('skills-education', event)">SKILLS & EDUCATION</a>
+    <a href="javascript:void(0)" onclick="showSection('projects', event)">PROJECTS</a>
+  </nav>
+
+</div>
+
+</body>
+  <script>
+    function showSection(sectionName, event) {
+      event.preventDefault();
+      // Alle Sektionen verstecken
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(section => {
+        section.style.display = 'none';
+      });
+      
+      // Gewählte Sektion anzeigen
+      document.getElementById(sectionName).style.display = 'block';
+      
+      // Aktiven Link markieren
+      const links = document.querySelectorAll('.timeline a');
+      links.forEach(link => {
+        link.style.borderColor = '#ccc';
+        link.style.color = '#333';
+      });
+      
+      // Aktuellen Link hervorheben
+      event.target.style.borderColor = '#000';
+      event.target.style.color = '#000';
+      return false;
+    }
+  </script>
+  <script>
+    document.getElementById('intro-screen').addEventListener('click', function () {
+      document.getElementById('intro-screen').style.display = 'none';
+      const main = document.getElementById('main-content');
+      main.style.display = 'block';
+      main.classList.add('animate-in');
+      document.getElementById('timeline').style.display = 'flex';
+      document.getElementById('title-fixed').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
