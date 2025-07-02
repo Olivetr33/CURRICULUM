@@ -39,6 +39,9 @@
       height: 100%;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       width: 100%;
+      max-width: 794px;
+      margin: 0 auto;
+      padding: 0 1rem;
       box-sizing: border-box;
     }
 
@@ -80,18 +83,16 @@
     }
 
     .timeline {
-      position: static;
-      flex-shrink: 0;
-      width: 160px;
-      height: 100vh;
+      z-index: 999;
+      position: fixed;
+      left: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: auto;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       gap: 1.5rem;
-      padding: 2rem 1rem;
-      background: #f8f9fa;
-      border-right: 1px solid #e9ecef;
-      overflow-y: auto;
     }
 
     .timeline a {
@@ -105,12 +106,14 @@
 
     .timeline a:hover {
       border-color: #000;
+      color: #000;
     }
 
     .main-content {
-      max-width: none;
-      width: 100%;
-      margin: 0;
+      max-width: 650px;
+      width: 650px;
+      margin: 0 auto;
+      margin-left: 160px;
       padding: 2rem;
       padding-bottom: 50px;
       box-sizing: border-box;
@@ -732,23 +735,48 @@
 
     /* Mobile responsiveness */
     @media screen and (max-width: 768px) {
-      .timeline {
-        width: 120px;
-        gap: 1rem;
-        padding: 1.5rem 0.8rem;
+      html, body {
+        padding: 0;
+        max-width: 100%;
       }
       
-      .timeline a {
-        font-size: 0.85rem;
-        padding: 0.4rem 0.5rem;
-      }
-      
-      .main-content {
-        padding: 1.5rem;
+      .page-wrapper {
+        padding: 0;
+        max-width: 100%;
       }
       
       .title-tag {
         font-size: 1.5rem;
+      }
+      
+      #title-fixed {
+        left: 10px !important;
+        top: 150px !important;
+        font-size: 1rem !important;
+      }
+      
+      #intro-screen .title-tag {
+        font-size: 2.5rem !important;
+      }
+      
+      .main-content {
+        max-width: calc(100% - 120px) !important;
+        width: calc(100% - 120px) !important;
+        margin-left: 110px !important;
+        padding: 1rem !important;
+      }
+      
+      .timeline {
+        left: 10px !important;
+        top: 40% !important;
+        gap: 0.8rem !important;
+        transform: translateY(-50%) !important;
+      }
+      
+      .timeline a {
+        font-size: 0.7rem !important;
+        padding: 0.25rem 0.4rem !important;
+        border-left: 2px solid #ccc !important;
       }
       
       .skill-box, .job-entry {
@@ -771,42 +799,67 @@
       }
       
       header {
-        width: 100%;
-        max-width: none;
+        width: 100% !important;
+        max-width: 100% !important;
       }
       
       .top-header {
-        width: 100%;
-        max-width: none;
-        padding: 1rem;
-        gap: 1rem;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 1rem !important;
+        gap: 1rem !important;
       }
       
       .header-links {
-        width: 100%;
-        max-width: none;
-        margin: 1rem 0;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 1rem 0 !important;
       }
     }
 
     @media screen and (max-width: 480px) {
-      .timeline {
-        width: 80px;
-        gap: 0.8rem;
-        padding: 1rem 0.4rem;
+      html, body {
+        padding: 0;
+        max-width: 100%;
       }
       
-      .timeline a {
-        font-size: 0.7rem;
-        padding: 0.3rem 0.3rem;
-      }
-      
-      .main-content {
-        padding: 1rem;
+      .page-wrapper {
+        padding: 0;
+        max-width: 100%;
       }
       
       .title-tag {
         font-size: 1.2rem;
+      }
+      
+      #title-fixed {
+        left: 5px !important;
+        top: 100px !important;
+        font-size: 0.9rem !important;
+      }
+      
+      #intro-screen .title-tag {
+        font-size: 2rem !important;
+      }
+      
+      .main-content {
+        max-width: calc(100% - 90px) !important;
+        width: calc(100% - 90px) !important;
+        margin-left: 85px !important;
+        padding: 0.8rem !important;
+      }
+      
+      .timeline {
+        left: 5px !important;
+        top: 35% !important;
+        gap: 0.6rem !important;
+        transform: translateY(-50%) !important;
+      }
+      
+      .timeline a {
+        font-size: 0.6rem !important;
+        padding: 0.2rem 0.3rem !important;
+        border-left: 2px solid #ccc !important;
       }
       
       .tech-skill-pill, .language-pill, .education-pill {
@@ -820,38 +873,30 @@
       }
       
       header {
-        width: 100%;
-        max-width: none;
+        width: 100% !important;
+        max-width: 100% !important;
       }
       
       .top-header {
-        width: 100%;
-        max-width: none;
-        padding: 0.8rem;
-        gap: 0.8rem;
-        flex-direction: column;
-        align-items: center;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0.8rem !important;
+        gap: 0.8rem !important;
+        flex-direction: column !important;
+        align-items: center !important;
       }
       
       .header-links {
-        width: 100%;
-        max-width: none;
-        margin: 0.5rem 0;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0.5rem 0 !important;
       }
       
       .header-links a {
-        margin: 0 0.5rem;
-        font-size: 0.8rem;
-        padding: 0.3rem 0.6rem;
+        margin: 0 0.5rem !important;
+        font-size: 0.8rem !important;
+        padding: 0.3rem 0.6rem !important;
       }
-    }
-
-    .layout-container {
-      display: block;
-    }
-    
-    .main-wrapper {
-      display: block;
     }
   </style>
 </head>
@@ -867,15 +912,6 @@
         scroll-behavior: auto !important;
       }
     </style>
-    
-    <!-- Timeline Navigation -->
-    <nav id="timeline" class="timeline">
-      <a href="javascript:void(0)" onclick="showSection('experience', event)">EXPERIENCE</a>
-      <a href="javascript:void(0)" onclick="showSection('skills-education', event)">SKILLS & EDUCATION</a>
-      <a href="javascript:void(0)" onclick="showSection('projects', event)">PROJECTS</a>
-    </nav>
-    
-    <div class="page-wrapper">
   <header>
     <div class="top-header">
       <div class="profile">
@@ -994,7 +1030,7 @@
           <div class="skill-heading-bar">Education & Certifications</div>
           <div style="padding: 0; list-style: none;">
             <div class="education-pill">
-              <strong>(Ongoing) LL.B. Bachelor of Laws – FernUniversität Hagen</strong><a href="https://www.linkedin.com/school/fernunihagen/posts/?feedView=all" target="_blank">Link</a><br><em>Oct 2020 – Oct 2026</em>
+              <strong>LL.B. Bachelor of Laws – FernUniversität Hagen</strong><a href="https://www.linkedin.com/school/fernunihagen/posts/?feedView=all" target="_blank">Link</a><br><em>Oct 2020 – Oct 2026</em>
             </div>
             <div class="education-pill">
               <strong>Data Privacy Officer – TÜV SÜD</strong><a href="https://www.linkedin.com/company/57146/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3ByKMgZrwmT2yJ2YNbvmYGJg%3D%3D" target="_blank">Zertifikats-ID: Z-001054586</a><br><em>Oct 2020 – Oct 2026</em>
@@ -1069,9 +1105,14 @@
         </div>
       </div>
     </section>
-  </main>
-    </div>
-  </div>
+  </main>  </div>
+
+  <!-- Timeline Navigation - completely outside main content flow -->
+  <nav id="timeline" class="timeline">
+    <a href="javascript:void(0)" onclick="showSection('experience', event)">EXPERIENCE</a>
+    <a href="javascript:void(0)" onclick="showSection('skills-education', event)">SKILLS & EDUCATION</a>
+    <a href="javascript:void(0)" onclick="showSection('projects', event)">PROJECTS</a>
+  </nav>
 
   <script>
     function showSection(sectionName, event) {
